@@ -16,10 +16,10 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
   </head>
-  <body>
+  <body class="d-flex justify-content-between">
     <!-- main -->
     <div class="container main-menu">
-      <div class="row justify-content-between">
+      <div class="row row-cols-1 row-cols-md-3 gx-5 d-flex justify-content-between">
         <!-- Menu Kiri -->
         <div class="col-md-3 side-kiri pt-3 p-2 pb-5">
           <div class="row">
@@ -34,18 +34,12 @@
             <div class="col-md-2"><i class="bi bi-journal"></i></div>
             <div class="col-md-10">Koleksi Buku</div>
           </a>
-          <a href="semua_buku.php" class="row link-menu justify-content-around">
-            <div class="col-md-2"><i class="bi bi-people"></i></div>
-            <div class="col-md-10">Semua Penulis</div>
-          </a>
+
           <a href="sudah_dibaca.php" class="row link-menu justify-content-around">
             <div class="col-md-2"><i class="bi bi-journal-check"></i></div>
             <div class="col-md-10">Sudah Dibaca</div>
           </a>
-          <a href="sedang_dibaca.php" class="row link-menu justify-content-around">
-            <div class="col-md-2"><i class="bi bi-book"></i></div>
-            <div class="col-md-10">Sedang Dibaca</div>
-          </a>
+
           <a href="belum_dibaca.php" class="row link-menu justify-content-around">
             <div class="col-md-2"><i class="bi bi-bookmark"></i></div>
             <div class="col-md-10">Belum Dibaca</div>
@@ -54,10 +48,7 @@
             <div class="col-md-2"><i class="bi bi-plus-circle"></i></div>
             <div class="col-md-10">Tambah Buku</div>
           </a>
-          <a href="tambah_penulis.php" class="row link-menu justify-content-around">
-            <div class="col-md-2"><i class="bi bi-person-plus"></i></div>
-            <div class="col-md-10">Tambah Penulis</div>
-          </a>
+
           <!-- Akhir Link Menu -->
 
           <!-- Tombol Keluar -->
@@ -70,7 +61,97 @@
         <!-- Akhir Menu Kiri -->
 
         <!-- Bagian Tengah -->
-        <div class="col-md-6 side-tengah"></div>
+        <div class="col-md-6 side-tengah">
+          <div class="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-between">
+            <!-- Banner -->
+            <div class="col-md-12">
+              <div class="banner p-4">
+                <div class="row">
+                  <div class="col-md-8 align-self-center tulisan">
+                    <h5 class="fw-bold pb-3">Jangan Biarkan Bukumu Usang dan Berdebu</h5>
+                    <p class="mb-4">Ayo kelola bukumu, supaya kamu lebih semangat membaca dan bukumu tak lagi usang</p>
+                    <a class="active1 fw-bold" href="tambah_buku.php">Lakukan Sekarang</a>
+                  </div>
+                  <div class="col-md-4 gambar d-flex align-items-center">
+                    <img class="img-fluid" src="Gambar/Ilustrasi/Saly-16.png" alt="ilustrasi" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Akhir Banner -->
+            <!-- Card 1 -->
+            <div class="col-md-6">
+              <div class="card mb-3 card-putih kecil">
+                <div class="row g-0">
+                  <div class="col-md-5 d-flex align-items-center">
+                    <img class="card-img img-fluid" src="Gambar/Ilustrasi/Books_perspective_matte_s.png" alt="lapak" />
+                  </div>
+                  <div class="col-md-7">
+                    <div class="card-body">
+                      <p class="fw-bold">Jumlah Buku</p>
+                      <h1 class="card-title fw-bold">20</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Akhir Card 1 -->
+
+            <!-- Card 2 -->
+            <div class="col-md-6">
+              <div class="card mb-3 card-putih kecil">
+                <div class="row g-0">
+                  <div class="col-md-5 d-flex align-items-center">
+                    <img class="card-img img-fluid" src="Gambar/Ilustrasi/User_perspective_matte_s.png" alt="lapak" />
+                  </div>
+                  <div class="col-md-7">
+                    <div class="card-body">
+                      <p class="fw-bold">Jumlah Penulis</p>
+                      <h1 class="card-title fw-bold">10</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Akhir card 2 -->
+
+            <!-- Card 3 -->
+            <div class="col-md-6">
+              <div class="card mb-3 card-putih kecil">
+                <div class="row g-0">
+                  <div class="col-md-5 d-flex align-items-center">
+                    <img class="card-img img-fluid" src="Gambar/Ilustrasi/Success_perspective_matte_s.png" alt="lapak" />
+                  </div>
+                  <div class="col-md-7">
+                    <div class="card-body">
+                      <p class="fw-bold">Sudah Dibaca</p>
+                      <h1 class="card-title fw-bold">5</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Akhir Card 3 -->
+
+            <!-- Card 4 -->
+            <div class="col-md-6">
+              <div class="card mb-3 card-putih kecil">
+                <div class="row g-0">
+                  <div class="col-md-5 d-flex align-items-center">
+                    <img class="card-img img-fluid" src="Gambar/Ilustrasi/Notebook_perspective_matte_s.png" alt="lapak" />
+                  </div>
+                  <div class="col-md-7">
+                    <div class="card-body">
+                      <p class="fw-bold">Belum dibaca</p>
+                      <h1 class="card-title fw-bold">2</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Akhir Card 4 -->
+          </div>
+        </div>
         <!-- Akhir Bagian Tengah -->
 
         <!-- Bagian Kanan -->
@@ -95,10 +176,10 @@
             <!-- Card Per Buku -->
             <div class="card mb-3" style="max-width: 540px">
               <div class="row g-0">
-                <div class="col-md-4">
+                <div class="col-md-3 d-flex align-items-center">
                   <img src="Gambar/Cover Buku/Jika Kita Tak pernah Jatuh cinta.jpg" class="img-fluid" alt="buku" />
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-9">
                   <div class="card-body">
                     <p class="card-title fw-bold">Jika Kita Tak Pernah Jatuh Cinta</p>
                     <p class="card-text">Alvi Syahrin</p>
@@ -108,7 +189,7 @@
             </div>
             <!-- Akhir Card Per Buku -->
             <!-- Button Lihat Semua -->
-            <a href="favorit.php" class="mt-4"><div class="button text-center">Lihat Semua</div></a>
+            <a href="favorit.php" class="mt-4 mb-4"><div class="button text-center">Lihat Semua</div></a>
             <!-- Akhir Button Lihat Semua -->
             <!-- Akhir Buku Favorit -->
           </div>
