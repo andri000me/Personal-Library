@@ -1,13 +1,15 @@
 /* Font  */
-<style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-</style>
 
 body {
   margin: 0;
   padding: 0;
   background-color: #f3f8fe;
-  font-family: font-family: 'Montserrat', sans-serif;;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
 }
 .main-menu {
   margin-top: 79px;
@@ -15,8 +17,48 @@ body {
 .side-kiri {
   background: radial-gradient(47.67% 47.67% at 50% 46.8%, #0780a7 0%, #0e76aa 100%);
   border-radius: 20px;
+  color: white;
+}
+
+.side-kiri .link-menu {
+  text-decoration: none;
+  color: white;
+  margin: 40px;
+  font-size: 16px;
 }
 
 .side-kanan {
-  background-color: black;
+  background: #ffffff;
+  /* shadow card */
+  box-shadow: 0px 5px 40px rgba(14, 118, 170, 0.2);
+  border-radius: 20px;
+}
+
+.side-kiri h2 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.button {
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  /* shadow card */
+  box-shadow: 0px 5px 40px rgba(14, 118, 170, 0.2);
+  border-radius: 50px;
+  /* Tulisan */
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.side-kiri .button {
+  background: #f3f8fe;
+  color: #0e76aa;
+  margin-left: 42px;
+  margin-right: 42px;
 }
