@@ -1,0 +1,22 @@
+/* Font  */
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+</style>
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f3f8fe;
+  font-family: font-family: 'Montserrat', sans-serif;;
+}
+.main-menu {
+  margin-top: 79px;
+}
+.side-kiri {
+  background: radial-gradient(47.67% 47.67% at 50% 46.8%, #0780a7 0%, #0e76aa 100%);
+  border-radius: 20px;
+}
+
+.side-kanan {
+  background-color: black;
+}
