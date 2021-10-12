@@ -42,10 +42,6 @@ a {
 }
 
 .side-kanan {
-  background: #ffffff;
-  /* shadow card */
-  box-shadow: 0px 5px 40px rgba(14, 118, 170, 0.2);
-  border-radius: 20px;
 }
 
 .side-kiri h2 {
@@ -67,7 +63,20 @@ a {
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
-  line-height: 24px;
+}
+
+.search {
+  background: #0e76aa;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  /* shadow card */
+  box-shadow: 0px 5px 40px rgba(14, 118, 170, 0.2);
+  border-radius: 30px;
+  /* Icon*/
+  color: white;
+  margin-left: 20px;
 }
 
 .side-kiri .button {
@@ -90,4 +99,11 @@ a {
 .active1 div {
   color: #0e76aa;
   font-weight: 600;
+}
+
+.card-putih {
+  background: #ffffff;
+  /* shadow card */
+  box-shadow: 0px 5px 40px rgba(14, 118, 170, 0.2);
+  border-radius: 20px;
 }
