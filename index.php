@@ -177,7 +177,7 @@
             <div class="card mb-3" style="max-width: 540px">
               <div class="row g-0">
                 <div class="col-md-3 d-flex align-items-center">
-                  <img src="Gambar/Cover Buku/Jika Kita Tak pernah Jatuh cinta.jpg" class="img-fluid" alt="buku" />
+                  <img src="Gambar/CoverBuku/Jika Kita Tak pernah Jatuh cinta.jpg" class="img-fluid" alt="buku" />
                 </div>
                 <div class="col-md-9">
                   <div class="card-body">
