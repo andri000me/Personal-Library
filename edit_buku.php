@@ -137,7 +137,7 @@
             </div>
             <!-- Akhir Bagian Tengah -->
 
-            <!-- Bagian Kanan -->
+            <!-- Bagian Kanan --> 
             <div class="col-md-3 side-kanan">
               <!-- Pencarian -->
               <div class="row">
