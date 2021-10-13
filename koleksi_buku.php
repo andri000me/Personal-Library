@@ -108,8 +108,8 @@
                   </div>
                   <div class="col-md-8">
                     <div class="card-body ms-2">
-                      <p class="fw-bold">Jika Kita Tak Pernah Jatuh Cinta</p>
-                      <p class="small-text">Alvi Syahrin</p>
+                      <p class="fw-bold ">Jika Kita Tak Pernah Jatuh Cinta</p>
+                      <p class="small-text ">Alvi Syahrin</p>
                       <div class="d-flex justify-content-end">
                       <a class="bulet-putih m-1" href="delete.php"><i class="bi bi-trash"></i></a>
                       <a class="bulet-biru m-1" href="edit.php"><i class="bi bi-pencil-square"></i></a>

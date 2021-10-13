@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -99,29 +106,29 @@
                     <div class="col-md-6">
                       <p>Status</p>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="sudah" id="sudah" />
+                        <input class="form-check-input" type="radio" name="status" id="sudah" value="sudah"/>
                         <label class="form-check-label" for="sudah"> Sudah Dibaca </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="belum" id="belum"/>
+                        <input class="form-check-input" type="radio" name="status" id="belum" value="belum"/>
                         <label class="form-check-label" for="belum"> Belum Dibaca </label>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <p>Apakah ini buku favoritmu?</p>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="ya" id="ya" />
+                        <input class="form-check-input" type="radio" name="favorit" id="ya" value="ya" />
                         <label class="form-check-label" for="ya"> Ya </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="tidak" id="tidak"/>
+                        <input class="form-check-input" type="radio" name="favorit" id="tidak" value="tidak"/>
                         <label class="form-check-label" for="tidak"> Tidak </label>
                       </div>
                     </div>
 
                     <div class="col-12">
                       <label for="formFile" class="form-label">Foto Cover Buku</label>
-                      <input class="form-control" type="file" id="formFile" />
+                      <input class="form-control" type="file" id="formFile" name="foto_buku" />
                     </div>
 
                     <div class="col-12 mt-5">
