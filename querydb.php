@@ -51,7 +51,7 @@ function upload(){
     //cek apakah yang diupload gambar
     $ekstensiValid = ['png', 'jpg', 'jpeg', 'svg'];
     $ekstensiFoto = explode('.', $namaFile);
-    $ekstensiFoto = strtolower(end($ekstensiGambar));
+    $ekstensiFoto = strtolower(end($ekstensiFoto));
 
     if (!in_array($ekstensiFoto, $ekstensiValid)){
         echo "<script

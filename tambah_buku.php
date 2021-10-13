@@ -21,11 +21,7 @@ if(isset ($_POST["submit"])){
   ";
   }
 
-//pencarian
-//cek jika tombol cari ditekan
-if(isset($_POST["cari"])){
-  $buku = cari($_POST["keywoard"]);
-}
+
 }
 ?>
 
@@ -115,7 +111,7 @@ if(isset($_POST["cari"])){
 
                 <!-- Form -->
                 <div class="col-md-12">
-                  <form class="form-crud row g-3">
+                  <form action="" method="post" class="form-crud row g-3 " enctype="multipart/form-data">
                     <div class="col-md-12">
                       <label for="id" class="form-label">ID Buku</label>
                       <input type="text" class="form-control" id="id" name="id" />
@@ -168,15 +164,7 @@ if(isset($_POST["cari"])){
 
             <!-- Bagian Kanan -->
             <div class="col-md-3 side-kanan">
-              <!-- Pencarian -->
-              <div class="row">
-                <form class="d-flex justify-content-between" method="POST">
-                  <input class="form-control form-control-lg-2" type="text" placeholder="Cari Buku" aria-label="default input example" name="cari" id="cari" />
-                  <!-- Button cari -->
-                  <button type="button" class="btn btn-biru d-inline"><i class="bi bi-search"></i></button>
-                </form>
-              </div>
-              <!-- Akhir Pencarian -->
+              
 
               <!-- Side Bar Bawah Pencarian -->
               <div class="row card-putih mt-4 p-3 fav">

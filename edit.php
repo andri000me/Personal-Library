@@ -1,3 +1,39 @@
+<?php 
+require 'querydb.php';
+
+//ambil data di URL
+$id = $_GET["id"];
+
+//query data
+$dataBuku = query("SELECT * FROM buku WHERE id_buku = $id")[0];
+
+//cek tombol submit
+if(isset($_POST["submit"])){
+  //cek
+  if(ubah($_POST) > 0 ){
+    echo "
+      <script>
+        alert('Data Telah Berhasil Diubah!');
+        document.location.href = 'koleksi_buku.php'
+      </script>
+    ";
+
+  }else{
+    echo "
+    <script>
+      alert('Data diubah, ayo coba lagi!');
+      document.location.href = 'edit_buku.php'
+    </script>
+  ";
+  }
+
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -66,8 +102,6 @@
                 <div class="col-md-3 isi"><i class="bi bi-box-arrow-right bold"></i></div>
               </a>
 
-              
-              
               <!-- Akhir Tombol Keluar -->
             </div>
             <!-- Akhir Menu Kiri -->
@@ -83,38 +117,39 @@
 
                 <!-- Form -->
                 <div class="col-md-12">
-                  <form class="form-crud row g-3">
+                  <form action="" method="post" class="form-crud row g-3" enctype="multipart/form-data">
                     <div class="col-md-12">
+                      <input type="hidden" name="fotoLama" value="<?= $dataBuku["foto_buku"];?>">
                       <label for="id" class="form-label">ID Buku</label>
-                      <input type="text" class="form-control" id="id" name="id" />
+                      <input type="text" class="form-control" id="id" name="id" value="<?= $dataBuku["id_buku"];?>" />
                     </div>
                     <div class="col-md-12">
                       <label for="judulBuku" class="form-label">Judul Buku</label>
-                      <input type="text" class="form-control" id="judulBuku" name="judulBuku" />
+                      <input type="text" class="form-control" id="judulBuku" name="judulBuku" value="<?= $dataBuku["judul_buku"];?>" />
                     </div>
                     <div class="col-md-12">
                       <label for="penulis" class="form-label">Nama Penulis</label>
-                      <input type="text" class="form-control" id="penulis" name="penulis" />
+                      <input type="text" class="form-control" id="penulis" name="penulis" value="<?= $dataBuku["nama_penulis"];?>" />
                     </div>
                     <div class="col-md-6">
                       <p>Status</p>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="sudah" id="sudah" />
+                        <input class="form-check-input" type="radio" name="status" id="sudah" value="sudah" <?php if($dataBuku["status_buku"]=="sudah") echo "checked" ?> />
                         <label class="form-check-label" for="sudah"> Sudah Dibaca </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="belum" id="belum"/>
-                        <label class="form-check-label" for="belum"> Belum Dibaca </label>
+                        <input class="form-check-input" type="radio" name="status" id="belum" value="belum" />
+                        <label class="form-check-label" for="belum" <?php if($dataBuku["status_buku"]=="belum") echo "checked" ?>> Belum Dibaca </label>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <p>Apakah ini buku favoritmu?</p>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="ya" id="ya" />
+                        <input class="form-check-input" type="radio" name="favorit" id="ya" value="ya" <?php if($dataBuku["is_favorite"]=="ya") echo "checked" ?> />
                         <label class="form-check-label" for="ya"> Ya </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="tidak" id="tidak"/>
+                        <input class="form-check-input" type="radio" name="favorit" id="tidak" value="tidak" <?php if($dataBuku["is_favorite"]=="tidak") echo "checked" ?> />
                         <label class="form-check-label" for="tidak"> Tidak </label>
                       </div>
                     </div>
@@ -124,7 +159,7 @@
                       <input class="form-control" type="file" id="formFile" />
                     </div>
                     <div class="col-6">
-                    <img class="mt-3 mb-5 img-fluid" src="gambar/CoverBuku/Jika Kita Tak pernah Jatuh cinta.jpg" alt="buku" />
+                    <img class="mt-3 mb-5 img-fluid" src="gambar/CoverBuku/<?= $dataBuku["foto_buku"] ?>" alt="buku" />
                     </div>
 
                     <div class="col-12 mt-5 mb-5">

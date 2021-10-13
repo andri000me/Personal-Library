@@ -1,3 +1,15 @@
+<?php 
+require 'querydb.php';
+$buku = query("SELECT * FROM buku");
+//pencarian
+
+//cek jika tombol cari ditekan
+if(isset($_POST["cari"])){
+  $buku = cari($_POST["keyword"]);
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,17 +89,19 @@
               <h2 class="fw-bold">Koleksi Buku</h2>
             </div>
             <!-- Akhir judul  -->
+
             <!-- Card 1 -->
+            <?php foreach($buku as $row) :?>
             <div class="col-md-6">
               <div class="card mb-3 card-putih kecil">
                 <div class="row g-0 ">
                   <div class="col-md-4 d-flex align-items-center">
-                    <img class=" ms-2 card-img img-fluid" src="gambar/CoverBuku/Jika Kita Tak pernah Jatuh cinta.jpg" alt="gambar" />
+                    <img class=" ms-2 card-img img-fluid" src="gambar/CoverBuku/<?= $row["foto_buku"];?>" alt="gambar" />
                   </div>
                   <div class="col-md-8">
                     <div class="card-body ms-2">
-                      <p class="fw-bold">Jika Kita Tak Pernah Jatuh Cinta</p>
-                      <p class="small-text">Alvi Syahrin</p>
+                      <p class="fw-bold"><?= $row["judul_buku"];?></p>
+                      <p class="small-text"><?= $row["nama_penulis"];?></p>
                       <div class="d-flex justify-content-end">
                       <a class="bulet-putih m-1" href="delete.php"><i class="bi bi-trash"></i></a>
                       <a class="bulet-biru m-1" href="edit.php"><i class="bi bi-pencil-square"></i></a>
@@ -97,31 +111,9 @@
                 </div>
               </div>
             </div>
+            <?php endforeach;?>
             <!-- Akhir Card 1 -->
 
-             <!-- Card 1 -->
-             <div class="col-md-6">
-              <div class="card mb-3 card-putih kecil">
-                <div class="row g-0 ">
-                  <div class="col-md-4 d-flex align-items-center">
-                    <img class=" ms-2 card-img img-fluid" src="gambar/CoverBuku/Jika Kita Tak pernah Jatuh cinta.jpg" alt="gambar" />
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body ms-2">
-                      <p class="fw-bold ">Jika Kita Tak Pernah Jatuh Cinta</p>
-                      <p class="small-text ">Alvi Syahrin</p>
-                      <div class="d-flex justify-content-end">
-                      <a class="bulet-putih m-1" href="delete.php"><i class="bi bi-trash"></i></a>
-                      <a class="bulet-biru m-1" href="edit.php"><i class="bi bi-pencil-square"></i></a>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Akhir Card 1 -->
-
-           
           </div>
         </div>
         <!-- Akhir Bagian Tengah -->
@@ -130,7 +122,7 @@
         <div class="col-md-3 side-kanan">
           <!-- Pencarian -->
           <div class="row">
-            <form class="d-flex justify-content-between" method="POST">
+            <form action="" class="d-flex justify-content-between" method="POST">
               <input class="form-control form-control-lg-2" type="text" placeholder="Cari Buku" aria-label="default input example" name="cari" id="cari" />
               <!-- Button cari -->
               <button type="button" class="btn btn-biru d-inline"><i class="bi bi-search"></i></button>
