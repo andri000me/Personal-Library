@@ -23,7 +23,7 @@
 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="css/style.css" />
-        <title>Document</title>
+        <title>MyLib</title>
       </head>
       <body>
         <!-- main -->

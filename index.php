@@ -14,7 +14,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
-    <title>Document</title>
+    <title>MyLib</title>
   </head>
   <body class="d-flex justify-content-between">
     <!-- main -->
