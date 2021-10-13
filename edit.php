@@ -5,7 +5,7 @@ require 'querydb.php';
 $id = $_GET["id"];
 
 //query data
-$dataBuku = query("SELECT * FROM buku WHERE id_buku = $id")[0];
+$dataBuku = query("SELECT * FROM buku WHERE id_buku = '$id'")[0];
 
 //cek tombol submit
 if(isset($_POST["submit"])){
@@ -21,7 +21,7 @@ if(isset($_POST["submit"])){
   }else{
     echo "
     <script>
-      alert('Data diubah, ayo coba lagi!');
+      alert('Data gagal diubah, ayo coba lagi!');
       document.location.href = 'edit_buku.php'
     </script>
   ";
@@ -138,8 +138,8 @@ if(isset($_POST["submit"])){
                         <label class="form-check-label" for="sudah"> Sudah Dibaca </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="status" id="belum" value="belum" />
-                        <label class="form-check-label" for="belum" <?php if($dataBuku["status_buku"]=="belum") echo "checked" ?>> Belum Dibaca </label>
+                        <input class="form-check-input" type="radio" name="status" id="belum" value="belum" <?php if($dataBuku["status_buku"]=="belum") echo "checked" ?> />
+                        <label class="form-check-label" for="belum" > Belum Dibaca </label>
                       </div>
                     </div>
                     <div class="col-md-6">
@@ -156,14 +156,14 @@ if(isset($_POST["submit"])){
 
                     <div class="col-12">
                       <label for="formFile" class="form-label">Foto Cover Buku</label>
-                      <input class="form-control" type="file" id="formFile" />
+                      <input class="form-control" type="file" id="formFile" name="foto_buku" />
                     </div>
                     <div class="col-6">
                     <img class="mt-3 mb-5 img-fluid" src="gambar/CoverBuku/<?= $dataBuku["foto_buku"] ?>" alt="buku" />
                     </div>
 
                     <div class="col-12 mt-5 mb-5">
-                      <button type="submit" class="btn btn-primary">Update</button>
+                      <button type="submit" class="btn btn-primary" name="submit">Update</button>
                     </div>
                   </form>
                 </div>

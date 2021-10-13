@@ -102,9 +102,13 @@ if(isset($_POST["cari"])){
                     <div class="card-body ms-2">
                       <p class="fw-bold"><?= $row["judul_buku"];?></p>
                       <p class="small-text"><?= $row["nama_penulis"];?></p>
+                      <!-- Button edit hapus -->
                       <div class="d-flex justify-content-end">
-                      <a class="bulet-putih m-1" href="delete.php"><i class="bi bi-trash"></i></a>
-                      <a class="bulet-biru m-1" href="edit.php"><i class="bi bi-pencil-square"></i></a>
+                        <!-- hapus -->
+                      <a class="bulet-putih m-1" href="delete.php?id=<?= $row["id_buku"]; ?>"onclick="return confirm('Apakah anda yakin akan menghapus data ini?');" ><i class="bi bi-trash"></i></a>
+
+                      <!-- edit -->
+                      <a class="bulet-biru m-1" href="edit.php?id=<?= $row["id_buku"]; ?>"><i class="bi bi-pencil-square"></i></a>
                     </div>
                     </div>
                   </div>

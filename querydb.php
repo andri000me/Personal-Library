@@ -76,7 +76,7 @@ function ubah($data){
     $penulis = $data["penulis"];
     $status = $data["status"];
     $favorit = $data["favorit"];
-    $fotoLama = $data["foto_lama"];
+    $fotoLama = $data["fotoLama"];
 
     //cek user pilih gambar baru atau tidak
     if($_FILES['foto_buku']['error'] === 4){
@@ -100,6 +100,12 @@ function ubah($data){
     return mysqli_affected_rows($conn);
 
 
+}
+
+function hapus($id){
+    global $conn;
+    mysqli_query($conn, "DELETE FROM buku where id_buku = '$id'");
+    return mysqli_affected_rows($conn);
 }
 
 function cari($keyword){
