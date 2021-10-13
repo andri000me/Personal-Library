@@ -123,9 +123,12 @@
                       <label for="formFile" class="form-label">Foto Cover Buku</label>
                       <input class="form-control" type="file" id="formFile" />
                     </div>
+                    <div class="col-6">
+                    <img class="mt-3 mb-5 img-fluid" src="gambar/CoverBuku/Jika Kita Tak pernah Jatuh cinta.jpg" alt="buku" />
+                    </div>
 
-                    <div class="col-12 mt-5">
-                      <button type="submit" class="btn btn-biru ">Tambah</button>
+                    <div class="col-12 mt-5 mb-5">
+                      <button type="submit" class="btn btn-primary">Update</button>
                     </div>
                   </form>
                 </div>
