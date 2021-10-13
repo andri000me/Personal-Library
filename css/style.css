@@ -153,3 +153,24 @@ a {
 .kecil .card-body p {
   font-size: 14px;
 }
+
+.bulet-biru {
+  background: #0e76aa;
+  border-radius: 30px;
+  color: white;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.bulet-putih {
+  background: white;
+  border-radius: 30px;
+  border: 0.5px solid #0e76aa;
+  color: #0e76aa;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
