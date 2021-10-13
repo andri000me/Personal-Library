@@ -7,6 +7,8 @@ $buku = query("SELECT * FROM buku");
 if(isset($_POST["cari"])){
   $buku = cari($_POST["keyword"]);
 }
+
+
 ?>
 
 
@@ -127,9 +129,9 @@ if(isset($_POST["cari"])){
           <!-- Pencarian -->
           <div class="row">
             <form action="" class="d-flex justify-content-between" method="POST">
-              <input class="form-control form-control-lg-2" type="text" placeholder="Cari Buku" aria-label="default input example" name="cari" id="cari" />
+              <input class="form-control form-control-lg-2" type="text" placeholder="Cari Buku" aria-label="default input example" name="keyword" id="cari" />
               <!-- Button cari -->
-              <button type="button" class="btn btn-biru d-inline"><i class="bi bi-search"></i></button>
+              <button type="submit" name="cari" class="btn btn-biru d-inline"><i class="bi bi-search"></i></button>
             </form>
           </div>
           <!-- Akhir Pencarian -->

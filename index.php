@@ -1,3 +1,17 @@
+<?php 
+require 'querydb.php';
+$buku = query("SELECT * FROM buku");
+
+//pencarian
+//cek jika tombol cari ditekan
+if(isset($_POST["cari"])){
+  $buku = cari($_POST["keyword"]);
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -158,10 +172,10 @@
         <div class="col-md-3 side-kanan">
           <!-- Pencarian -->
           <div class="row">
-            <form class="d-flex justify-content-between" method="POST">
-              <input class="form-control form-control-lg-2" type="text" placeholder="Cari Buku" aria-label="default input example" name="cari" id="cari" />
+          <form action="koleksi_buku.php" class="d-flex justify-content-between" method="POST">
+              <input class="form-control form-control-lg-2" type="text" placeholder="Cari Buku" aria-label="default input example" name="keyword" id="cari" />
               <!-- Button cari -->
-              <button type="button" class="btn btn-biru d-inline"><i class="bi bi-search"></i></button>
+              <button type="submit" name="cari" class="btn btn-biru d-inline"><i class="bi bi-search"></i></button>
             </form>
           </div>
           <!-- Akhir Pencarian -->
