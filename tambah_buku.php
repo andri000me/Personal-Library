@@ -1,8 +1,33 @@
+<?php 
+require 'querydb.php';
 
+//cek tombol submit
+if(isset ($_POST["submit"])){
+  //cek apakah ada data baru yang masuk dari query di function tambah
+  if(tambah($_POST) > 0){
+    echo "
+    <script>
+      alert('Data Telah Berhasil Ditambahkan!');
+      document.location.href = 'koleksi_buku.php'
+    </script>
+  ";
 
+  }else{
+    echo "
+    <script>
+      alert('Data gagal ditambahkan, ayo coba lagi!');
+      document.location.href = 'tambah_buku.php'
+    </script>
+  ";
+  }
 
-
-
+//pencarian
+//cek jika tombol cari ditekan
+if(isset($_POST["cari"])){
+  $buku = cari($_POST["keywoard"]);
+}
+}
+?>
 
 
 <!DOCTYPE html>
@@ -132,7 +157,7 @@
                     </div>
 
                     <div class="col-12 mt-5">
-                      <button type="submit" class="btn btn-biru ">Tambah</button>
+                      <button type="submit" name="submit" class="btn btn-biru ">Tambah</button>
                     </div>
                   </form>
                 </div>

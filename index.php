@@ -143,7 +143,7 @@
                   <div class="col-md-7">
                     <div class="card-body">
                       <p class="fw-bold">Belum dibaca</p>
-                      <h1 class="card-title fw-bold">2</h1>
+                      <h1 class="card-title fw-bold">15</h1>
                     </div>
                   </div>
                 </div>
