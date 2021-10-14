@@ -41,7 +41,7 @@
                 <input type="password" class="form-control" id="password" />
               </div>
               <div class="d-flex justify-content-center mt-5 mb-5">
-                <button type="submit" class="btn btn-biru login">Masuk</button>
+                <button type="submit" name="login" class="btn btn-biru login">Masuk</button>
               </div>
             </form>
             <div class="d-flex d-inline justify-content-around">

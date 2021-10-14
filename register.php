@@ -1,3 +1,19 @@
+<?php 
+require 'querydb.php';
+
+if(isset($_POST["register"])){
+  if(registrasi($_POST) > 0){
+    echo "<script>
+    alert('Registrasi Berhasil')
+    document.location.href='login.php'</script>;";
+  }else{
+    echo mysqli_error($conn);
+  }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,27 +50,27 @@
             <form class="row g-3">
               <div class="col-md-12">
                 <label for="nama" class="form-label">Nama Lengkap</label>
-                <input type="text" class="form-control" id="nama" />
+                <input type="text" class="form-control" id="nama" name="nama" />
               </div>
             <form class="row g-3">
               <div class="col-md-12">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" />
+                <input type="text" class="form-control" id="username" name="username"/>
               </div>
               <div class="col-md-12">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" />
+                <input type="password" class="form-control" id="password" name="password"/>
               </div>
               <div class="col-md-12">
                 <label for="konfirmasi" class="form-label">Konfirmasi Password</label>
-                <input type="password" class="form-control" id="konfirmasi" />
+                <input type="password" class="form-control" id="konfirmasi" name="konfirmasi" />
               </div>
               <div class="col-12">
                       <label for="formFile" class="form-label">Foto Profil</label>
                       <input class="form-control" type="file" id="formFile" />
                     </div>
               <div class="d-flex justify-content-center mt-5 mb-5">
-                <button type="submit" class="btn btn-biru login">Daftar</button>
+                <button type="submit" name="register" class="btn btn-biru login">Daftar</button>
               </div>
             </form>
           </div>
