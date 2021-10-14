@@ -1,6 +1,15 @@
 <?php 
 require 'querydb.php';
 $buku = query("SELECT * FROM buku");
+$topfav  = query("SELECT * FROM buku WHERE is_favorite = 'ya' LIMIT 3 ");
+
+//jumlah jumlah
+$hitBuku = query("SELECT COUNT(judul_buku) AS jumBuku FROM buku")[0]; //jumlah buku
+$hitPenulis = query("SELECT COUNT(DISTINCT nama_penulis) AS jumPenulis FROM buku")[0]; //jumlah penulis
+$hitSudah = query("SELECT COUNT(status_buku) AS jumSudah FROM buku WHERE status_buku = 'sudah'")[0]; //jumlah sudah dibaca
+$hitBelum = query("SELECT COUNT(status_buku) AS jumBelum FROM buku WHERE status_buku = 'belum'")[0]; //jumlah belum dibaca
+
+
 
 //pencarian
 //cek jika tombol cari ditekan
@@ -10,6 +19,7 @@ if(isset($_POST["cari"])){
 
 
 ?>
+
 
 
 <!DOCTYPE html>
@@ -103,7 +113,7 @@ if(isset($_POST["cari"])){
                   <div class="col-md-7">
                     <div class="card-body">
                       <p class="fw-bold">Jumlah Buku</p>
-                      <h1 class="card-title fw-bold">20</h1>
+                      <h1 class="card-title fw-bold"><?= $hitBuku['jumBuku']; ?></h1>
                     </div>
                   </div>
                 </div>
@@ -121,7 +131,7 @@ if(isset($_POST["cari"])){
                   <div class="col-md-7">
                     <div class="card-body">
                       <p class="fw-bold">Jumlah Penulis</p>
-                      <h1 class="card-title fw-bold">10</h1>
+                      <h1 class="card-title fw-bold"><?= $hitPenulis['jumPenulis']; ?></h1>
                     </div>
                   </div>
                 </div>
@@ -139,7 +149,7 @@ if(isset($_POST["cari"])){
                   <div class="col-md-7">
                     <div class="card-body">
                       <p class="fw-bold">Sudah Dibaca</p>
-                      <h1 class="card-title fw-bold">5</h1>
+                      <h1 class="card-title fw-bold"><?= $hitSudah['jumSudah']; ?></h1>
                     </div>
                   </div>
                 </div>
@@ -157,7 +167,7 @@ if(isset($_POST["cari"])){
                   <div class="col-md-7">
                     <div class="card-body">
                       <p class="fw-bold">Belum dibaca</p>
-                      <h1 class="card-title fw-bold">15</h1>
+                      <h1 class="card-title fw-bold"><?= $hitBelum['jumBelum']; ?></h1>
                     </div>
                   </div>
                 </div>
@@ -188,19 +198,21 @@ if(isset($_POST["cari"])){
             <!-- Buku Favorit -->
             <h6 class="fw-bold mb-3">Buku Favoritku</h6>
             <!-- Card Per Buku -->
+            <?php foreach($topfav as $row) :?>
             <div class="card mb-3" style="max-width: 540px">
               <div class="row g-0">
                 <div class="col-md-3 d-flex align-items-center">
-                  <img src="Gambar/CoverBuku/Jika Kita Tak pernah Jatuh cinta.jpg" class="img-fluid" alt="buku" />
+                  <img src="Gambar/CoverBuku/<?= $row["foto_buku"];?>" class="img-fluid" alt="buku" />
                 </div>
                 <div class="col-md-9">
                   <div class="card-body">
-                    <p class="card-title fw-bold">Jika Kita Tak Pernah Jatuh Cinta</p>
-                    <p class="card-text">Alvi Syahrin</p>
+                    <p class="card-title fw-bold"><?= $row["judul_buku"];?></p>
+                    <p class="card-text"><?= $row["nama_penulis"];?></p>
                   </div>
                 </div>
               </div>
             </div>
+            <?php endforeach;?>
             <!-- Akhir Card Per Buku -->
             <!-- Button Lihat Semua -->
             <a href="favorit.php" class="mt-4 mb-4"><div class="button text-center">Lihat Semua</div></a>

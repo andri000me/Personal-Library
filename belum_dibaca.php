@@ -1,6 +1,7 @@
 <?php 
 require 'querydb.php';
 $buku = query("SELECT * FROM buku WHERE status_buku = 'belum' ");
+$topfav  = query("SELECT * FROM buku WHERE is_favorite = 'ya' LIMIT 3 ");
 //pencarian
 
 //cek jika tombol cari ditekan
@@ -144,19 +145,21 @@ if(isset($_POST["cari"])){
             <!-- Buku Favorit -->
             <h6 class="fw-bold mb-3">Buku Favoritku</h6>
             <!-- Card Per Buku -->
+            <?php foreach($topfav as $row) :?>
             <div class="card mb-3" style="max-width: 540px">
               <div class="row g-0">
                 <div class="col-md-3 d-flex align-items-center">
-                  <img src="Gambar/CoverBuku/Jika Kita Tak pernah Jatuh cinta.jpg" class="img-fluid" alt="buku" />
+                  <img src="Gambar/CoverBuku/<?= $row["foto_buku"];?>" class="img-fluid" alt="buku" />
                 </div>
                 <div class="col-md-9">
                   <div class="card-body">
-                    <p class="card-title fw-bold">Jika Kita Tak Pernah Jatuh Cinta</p>
-                    <p class="card-text">Alvi Syahrin</p>
+                    <p class="card-title fw-bold"><?= $row["judul_buku"];?></p>
+                    <p class="card-text"><?= $row["nama_penulis"];?></p>
                   </div>
                 </div>
               </div>
             </div>
+            <?php endforeach;?>
             <!-- Akhir Card Per Buku -->
             <!-- Button Lihat Semua -->
             <a href="favorit.php" class="mt-4 mb-4"><div class="button text-center">Lihat Semua</div></a>
