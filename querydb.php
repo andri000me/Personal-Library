@@ -122,6 +122,12 @@ function registrasi($data){
     $password = mysqli_real_escape_string($conn, $data["password"]);
     $konfirmasi = mysqli_real_escape_string($conn, $data["konfirmasi"]);
 
+    //upload foto
+    $foto = uploadpp();
+    if(!$foto){
+        return false;
+    }
+
     //cek apakah username sudah ada
     $result = mysqli_query($conn, "SELECT username FROM users WHERE username = '$username'");
 
@@ -139,6 +145,50 @@ function registrasi($data){
         </script>";
         return false;
     }
+
+    //enkripsi password
+    $password = password_hash($password, PASSWORD_DEFAULT);
+
+    //insert data user ke database
+    mysqli_query($conn, "INSERT INTO users VALUES ('', '$username', '$password')");
+
+    return mysqli_affected_rows($conn);
+
+
+    
+}
+
+function uploadpp(){
+    $namaFile = $_FILES['foto_profil']['name'];
+    $error = $_FILES['foto_profil']['error'];
+    $tmpName = $_FILES['foto_profil']['tmp_name'];
+
+    //cek jika tidak ada gambar yang diupload (nilai 4 menandakan bahwa tidak ada gambar yg diupload)
+    if($error === 4){
+        echo "<script> alert('Foto Profil wajib diupload!')</script>";
+        return false;
+
+    }
+
+    //cek apakah yang diupload gambar
+    $ekstensiValid = ['png', 'jpg', 'jpeg', 'svg'];
+    $ekstensiFoto = explode('.', $namaFile);
+    $ekstensiFoto = strtolower(end($ekstensiFoto));
+
+    if (!in_array($ekstensiFoto, $ekstensiValid)){
+        echo "<script
+                alert('Pastikan ekstensi file gambar anda png, jpg, atau jpeg!')
+            </script> ";
+        return false;
+    }
+
+    //generate nama file baru
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= '.';
+    $namaFileBaru.= $ekstensiFoto;
+    move_uploaded_file($tmpName, 'Gambar/FotoProfil/' .$namaFileBaru);
+
+    return $namaFileBaru;
 }
 
 ?>
