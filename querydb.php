@@ -150,7 +150,7 @@ function registrasi($data){
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     //insert data user ke database
-    mysqli_query($conn, "INSERT INTO users VALUES ('', '$username', '$password')");
+    mysqli_query($conn, "INSERT INTO users VALUES ('', '$nama_lengkap','$username', '$password','$foto')");
 
     return mysqli_affected_rows($conn);
 

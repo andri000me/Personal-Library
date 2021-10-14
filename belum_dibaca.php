@@ -1,4 +1,11 @@
 <?php 
+session_start();
+
+if( !isset($_SESSION["login"]) ) {
+	header("Location: login.php");
+	exit;
+}
+
 require 'querydb.php';
 $buku = query("SELECT * FROM buku WHERE status_buku = 'belum' ");
 $topfav  = query("SELECT * FROM buku WHERE is_favorite = 'ya' LIMIT 3 ");

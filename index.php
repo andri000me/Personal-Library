@@ -1,4 +1,12 @@
 <?php 
+
+session_start();
+
+if( !isset($_SESSION["login"]) ) {
+	header("Location: login.php");
+	exit;
+}
+
 require 'querydb.php';
 $buku = query("SELECT * FROM buku");
 $topfav  = query("SELECT * FROM buku WHERE is_favorite = 'ya' LIMIT 3 ");
@@ -10,12 +18,12 @@ $hitSudah = query("SELECT COUNT(status_buku) AS jumSudah FROM buku WHERE status_
 $hitBelum = query("SELECT COUNT(status_buku) AS jumBelum FROM buku WHERE status_buku = 'belum'")[0]; //jumlah belum dibaca
 
 
-
 //pencarian
 //cek jika tombol cari ditekan
 if(isset($_POST["cari"])){
   $buku = cari($_POST["keyword"]);
 }
+
 
 
 ?>

@@ -47,7 +47,7 @@ if(isset($_POST["register"])){
         <div class="container d-flex justify-content-center main-menu">
           <div class="card-putih p-3 col-md-4">
             <h3 class="judul text-center fw-bold mb-4">REGISTRASI</h3>
-            <form class="row g-3">
+            <form action="" method="post" enctype="multipart/form-data" class="row g-3">
               <div class="col-md-12">
                 <label for="nama" class="form-label">Nama Lengkap</label>
                 <input type="text" class="form-control" id="nama" name="nama" />
@@ -67,7 +67,7 @@ if(isset($_POST["register"])){
               </div>
               <div class="col-12">
                       <label for="formFile" class="form-label">Foto Profil</label>
-                      <input class="form-control" type="file" id="formFile" />
+                      <input class="form-control" type="file" name="foto_profil" id="formFile" />
                     </div>
               <div class="d-flex justify-content-center mt-5 mb-5">
                 <button type="submit" name="register" class="btn btn-biru login">Daftar</button>

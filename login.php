@@ -1,10 +1,44 @@
+<?php 
+session_start();
+
+if(isset($_SESSION["login"])){
+  header("Location: index.php");
+  exit;
+}
+
+require 'querydb.php';
+
+if(isset($_POST["login"])){
+  $username = $_POST["username"];
+  $password = $_POST["password"];
+
+  $result = mysqli_query($conn, "SELECT * FROM users WHERE username ='$username'");
+
+  //cek username
+  if(mysqli_num_rows($result)===1){
+    //cek password
+    $row = mysqli_fetch_assoc($result);
+    if(password_verify($password, $row["password"])){
+      //set session
+      $_SESSION["login"] = true;
+
+      header("Location: index.php");
+      exit;
+    }
+  }
+  $error = true;
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Login MyLib</title>
   </head>
   <body>
     <!DOCTYPE html>
@@ -31,14 +65,14 @@
         <div class="container d-flex justify-content-center main-menu">
           <div class="card-putih p-3 col-md-4">
             <h3 class="judul text-center fw-bold mb-4">MASUK</h3>
-            <form class="row g-3">
+            <form action="" method="post" class="row g-3">
               <div class="col-md-12">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" />
+                <input type="text" class="form-control" name="username" id="username" />
               </div>
               <div class="col-md-12">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" />
+                <input type="password" class="form-control" name="password" id="password" />
               </div>
               <div class="d-flex justify-content-center mt-5 mb-5">
                 <button type="submit" name="login" class="btn btn-biru login">Masuk</button>
