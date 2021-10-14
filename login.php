@@ -21,6 +21,10 @@ if(isset($_POST["login"])){
     if(password_verify($password, $row["password"])){
       //set session
       $_SESSION["login"] = true;
+      $_SESSION["nama"] = $row["nama_lengkap"];
+      $_SESSION["username"] = $row["username"];
+      $_SESSION["foto_profil"] = $row["foto_profil"];
+      
 
       header("Location: index.php");
       exit;

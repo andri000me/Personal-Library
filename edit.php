@@ -98,7 +98,7 @@ if(isset($_POST["submit"])){
                 <div class="col-md-2"><i class="bi bi-bookmark"></i></div>
                 <div class="col-md-10">Belum Dibaca</div>
               </a>
-              <a href="tambah_buku.php" class="row link-menu justify-content-around active1">
+              <a href="tambah_buku.php" class="row link-menu justify-content-around">
                 <div class="col-md-2"><i class="bi bi-plus-circle"></i></div>
                 <div class="col-md-10">Tambah Buku</div>
               </a>
@@ -120,7 +120,7 @@ if(isset($_POST["submit"])){
               <div class="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-between">
                 <!-- judul -->
                 <div class="col-md-12">
-                  <h2 class="fw-bold">Tambah Buku</h2>
+                  <h2 class="fw-bold">Edit Buku</h2>
                 </div>
                 <!-- Akhir judul  -->
 
@@ -195,13 +195,13 @@ if(isset($_POST["submit"])){
 
               <!-- Side Bar Bawah Pencarian -->
               <div class="row card-putih mt-4 p-3 fav">
-                <img class="rounded-circle mx-auto d-block profil mt-5 mb-4" src="Gambar/FotoProfil/Indah-pp5.png" alt="Foto Profil" />
-                <h5 class="text-center fw-bold">Indah Yunita</h5>
-                <p class="text-center mb-5">@inyunita_</p>
-                <!-- Buku Favorit -->
-                <h6 class="fw-bold mb-3">Buku Favoritku</h6>
-                <!-- Card Per Buku -->
-                <?php foreach($topfav as $row) :?>
+            <img class="rounded-circle mx-auto d-block profil mt-5 mb-4" src="Gambar/FotoProfil/<?= $_SESSION["foto_profil"];?>" alt="Foto Profil" />
+            <h5 class="text-center fw-bold"><?= $_SESSION["nama"];?></h5>
+            <p class="text-center mb-5"><?= $_SESSION["username"];?></p>
+            <!-- Buku Favorit -->
+            <h6 class="fw-bold mb-3">Buku Favoritku</h6>
+            <!-- Card Per Buku -->
+            <?php foreach($topfav as $row) :?>
             <div class="card mb-3" style="max-width: 540px">
               <div class="row g-0">
                 <div class="col-md-3 d-flex align-items-center">
@@ -216,12 +216,12 @@ if(isset($_POST["submit"])){
               </div>
             </div>
             <?php endforeach;?>
-                <!-- Akhir Card Per Buku -->
-                <!-- Button Lihat Semua -->
-                <a href="favorit.php" class="mt-4 mb-4"><div class="button text-center">Lihat Semua</div></a>
-                <!-- Akhir Button Lihat Semua -->
-                <!-- Akhir Buku Favorit -->
-              </div>
+            <!-- Akhir Card Per Buku -->
+            <!-- Button Lihat Semua -->
+            <a href="favorit.php" class="mt-4 mb-4"><div class="button text-center">Lihat Semua</div></a>
+            <!-- Akhir Button Lihat Semua -->
+            <!-- Akhir Buku Favorit -->
+          </div>
               <!-- Akhir Side Bar Bawah Pencarian -->
             </div>
             <!-- Akhir Bagian Kanan -->

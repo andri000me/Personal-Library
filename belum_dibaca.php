@@ -146,9 +146,9 @@ if(isset($_POST["cari"])){
 
           <!-- Side Bar Bawah Pencarian -->
           <div class="row card-putih mt-4 p-3 fav">
-            <img class="rounded-circle mx-auto d-block profil mt-5 mb-4" src="Gambar/FotoProfil/Indah-pp5.png" alt="Foto Profil" />
-            <h5 class="text-center fw-bold">Indah Yunita</h5>
-            <p class="text-center mb-5">@inyunita_</p>
+            <img class="rounded-circle mx-auto d-block profil mt-5 mb-4" src="Gambar/FotoProfil/<?= $_SESSION["foto_profil"];?>" alt="Foto Profil" />
+            <h5 class="text-center fw-bold"><?= $_SESSION["nama"];?></h5>
+            <p class="text-center mb-5"><?= $_SESSION["username"];?></p>
             <!-- Buku Favorit -->
             <h6 class="fw-bold mb-3">Buku Favoritku</h6>
             <!-- Card Per Buku -->

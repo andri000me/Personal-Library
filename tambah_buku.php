@@ -179,13 +179,13 @@ if(isset ($_POST["submit"])){
 
               <!-- Side Bar Bawah Pencarian -->
               <div class="row card-putih mt-4 p-3 fav">
-                <img class="rounded-circle mx-auto d-block profil mt-5 mb-4" src="Gambar/FotoProfil/Indah-pp5.png" alt="Foto Profil" />
-                <h5 class="text-center fw-bold">Indah Yunita</h5>
-                <p class="text-center mb-5">@inyunita_</p>
-                <!-- Buku Favorit -->
-                <h6 class="fw-bold mb-3">Buku Favoritku</h6>
-                <!-- Card Per Buku -->
-                <?php foreach($topfav as $row) :?>
+            <img class="rounded-circle mx-auto d-block profil mt-5 mb-4" src="Gambar/FotoProfil/<?= $_SESSION["foto_profil"];?>" alt="Foto Profil" />
+            <h5 class="text-center fw-bold"><?= $_SESSION["nama"];?></h5>
+            <p class="text-center mb-5"><?= $_SESSION["username"];?></p>
+            <!-- Buku Favorit -->
+            <h6 class="fw-bold mb-3">Buku Favoritku</h6>
+            <!-- Card Per Buku -->
+            <?php foreach($topfav as $row) :?>
             <div class="card mb-3" style="max-width: 540px">
               <div class="row g-0">
                 <div class="col-md-3 d-flex align-items-center">
@@ -200,12 +200,12 @@ if(isset ($_POST["submit"])){
               </div>
             </div>
             <?php endforeach;?>
-                <!-- Akhir Card Per Buku -->
-                <!-- Button Lihat Semua -->
-                <a href="favorit.php" class="mt-4 mb-4"><div class="button text-center">Lihat Semua</div></a>
-                <!-- Akhir Button Lihat Semua -->
-                <!-- Akhir Buku Favorit -->
-              </div>
+            <!-- Akhir Card Per Buku -->
+            <!-- Button Lihat Semua -->
+            <a href="favorit.php" class="mt-4 mb-4"><div class="button text-center">Lihat Semua</div></a>
+            <!-- Akhir Button Lihat Semua -->
+            <!-- Akhir Buku Favorit -->
+          </div>
               <!-- Akhir Side Bar Bawah Pencarian -->
             </div>
             <!-- Akhir Bagian Kanan -->
